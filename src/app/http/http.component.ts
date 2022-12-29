@@ -10,11 +10,12 @@ import { UserService } from '../user.service';
 })
 export class HttpComponent {
   protected users!: Observable<IUser[]>;
-
+  todo=null;
 constructor(public userservice:UserService){}
 ngOnInit(): void{
-this.userservice.getUsers().subscribe(res=>{
-  this.users=res;
-})
+// this.userservice.getUsers().subscribe(res=>{
+//   this.users=res;
+// })
+this.userservice.getUsers(2).subscribe(data=>this.todo=data);
 }
 }
