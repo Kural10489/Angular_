@@ -7,6 +7,35 @@
   <title>Angular</title>
 </head>
 <body>
+ <!-- Setting up Routes  -->
+ <div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <ul class="nav flex nav-pills">
+        <li class="nav-item nav-link"><a routerLink="/" routerLinkActive="active"[routerLinkActiveOptions]="{exact:true}">Home</a></li> 
+        <li class="nav-item nav-link"><a routerLink="/users" routerLinkActive="active">Users</a></li>
+        <li class="nav-item nav-link"><a routerLink="/categories" routerLinkActive="active">categories</a></li>
+       <div class="ms-auto">
+        <button class="nav-item nav-btn btn btn-dark" (click)="onLogin()">Login</button> 
+        <button class=" nav-item nav-btn btn btn-dark" (click)="onLogout()">Logout</button>
+      </div>
+      </ul>
+    </div>
+  </div>
+ </div>
+<div *ngIf="authenticate">
+  <small class="text-danger text-center">Please login to check users list</small>
+</div>
+
+
+
+
+ <div class="col-md-9">
+ <router-outlet></router-outlet>
+ </div>
+
+
+ <hr>
   <app-http></app-http>
   <hr>
   <h4>Testing </h4>

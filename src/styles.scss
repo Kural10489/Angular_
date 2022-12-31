@@ -1,1 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
+@import "../node_modules/bootstrap/scss/bootstrap";
+a{
+    text-decoration: none; 
+}
+.active{
+    border-radius: 2px;
+    background-color: rgb(180, 180, 240);
+    color: rgb(0, 0, 0);
+    padding: 10px;
+}

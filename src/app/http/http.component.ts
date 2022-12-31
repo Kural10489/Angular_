@@ -16,6 +16,6 @@ ngOnInit(): void{
 // this.userservice.getUsers().subscribe(res=>{
 //   this.users=res;
 // })
-this.userservice.getUsers(2).subscribe(data=>this.todo=data);
+// this.userservice.getUsers(2).subscribe(data=>this.todo=data);
 }
 }

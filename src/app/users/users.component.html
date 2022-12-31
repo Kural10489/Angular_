@@ -1,0 +1,16 @@
+<h4>Welcome to Users</h4>
+
+<!-- Navigating a link through button (program logic in User.comp.ts file) -->
+<button class="btn btn-warning" (click)="navToCategoriesbtn()">Go to categories</button>
+<div>
+    <br>
+    <p>Passing and fetching parameters in routes</p>
+    <div>User id: {{user.id}}</div>
+    <div>User id: {{user.name}}</div>
+  Child Route 1: 
+    <a [routerLink]="['/users',1,'kural']" >Get Kural details</a> <br>
+    Child Route 2:  <a [routerLink]="['/users',2,'M']" >Get Person M details</a>
+    <div>
+        <br> <br>
+        <router-outlet> </router-outlet>
+    </div>
