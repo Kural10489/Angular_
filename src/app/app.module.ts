@@ -17,12 +17,14 @@ import { Routes,RouterModule } from '@angular/router';
 //For Auth Guard 
 import { AuthService } from './services/guards/auth.service';
 import { authGuardService } from './services/guards/authGuard.service';
+import { categoriesModule } from './categories.module';
 const appRoutes:Routes=[
   {path:'',component:HomeComponent}, //localhost4200
   {path:'users',component:UsersComponent,
   canActivate:[authGuardService],
   children:[{path:':id/:name',component:UsersComponent}]},
-  {path:'categories',component:CategoriesComponent}
+  // {path:'categories',component:CategoriesComponent}
+  {path:'categories',loadChildren:()=>import('./categories.module').then(m=>m.categoriesModule)}
 ]
 @NgModule({
   declarations: [
@@ -31,7 +33,6 @@ const appRoutes:Routes=[
     TestingComponent,
     HomeComponent,
     UsersComponent,
-    CategoriesComponent,
     
   ],
   imports: [
@@ -40,7 +41,8 @@ const appRoutes:Routes=[
     RouterModule.forRoot(appRoutes),
     FormsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+  
   ],
   providers: [AuthService,authGuardService],
   bootstrap: [AppComponent]
